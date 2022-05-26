@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+    font-size: 16px;
+}
+
+ul {
+    list-style: none;
+}
+
+ul > li {
+    display: inline-block;
+}
+
+ul > li > a {
+    font-size: 1rem;
+}
+
+
