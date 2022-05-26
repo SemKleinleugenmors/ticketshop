@@ -16,10 +16,14 @@
                     <li><a class="block pl-4" href="/">Home</a></li>
                 </ul>
             </nav>
+
             @auth
-              <a class="shadow rounded-lg bg-white text-lg px-5 py-2.5 mr-2 mb-2" href="/logout">Logout</a>
+              <form class="mr-2 mb-2" action="/logout" method="post">
+                @csrf
+                <button type="submit" class="shadow rounded-lg bg-white text-lg px-5 py-2.5">Logout</button>
+              </form>
             @else
-              <a class="shadow rounded-lg bg-white text-lg px-5 py-2.5 mr-2 mb-2" href="/login">Login</a>
+                <a href="/login" class="shadow rounded-lg bg-white text-lg px-5 py-2.5">Login</a>
             @endauth
         </section>
     </header>

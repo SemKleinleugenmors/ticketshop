@@ -30,13 +30,14 @@ Route::get('/', [SiteController::class, 'index']);
 /* Auth */
 Route::get('/login', [AuthController::class, 'create']);
 Route::post('/login', [AuthController::class, 'store']);
+Route::post('/logout', [AuthController::class, 'destroy']);
 
 /* Locations */
 Route::get('/locations', [LocationController::class, 'index']);
 Route::get('/locations/{id}', [LocationController::class, 'show']);
 
 /* Ticket */
-Route::get('/tickets/{id}', [TicketController::class, 'create']);
+Route::get('/tickets/{id}/{movieName}', [TicketController::class, 'create']);
 Route::post('/tickets/store', [TicketController::class, 'store']);
 
 /* Movies */

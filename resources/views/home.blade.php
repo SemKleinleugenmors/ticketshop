@@ -56,7 +56,7 @@
                             </div>
 
                             <div class="w-1/4">
-                                <a class="shadow rounded-lg bg-white text-lg px-5 py-2.5 mr-2 mb-2" href="/tickets/{{ $ticket->id }}">Naar bestellen</a>
+                                <a class="shadow rounded-lg bg-white text-lg px-5 py-2.5 mr-2 mb-2" href="/tickets/{{ $ticket->id }}/{{  Str::snake($ticket->movie->title, "-") }}">Naar bestellen</a>
                             </div>
                         </dl>
                     @endforeach
