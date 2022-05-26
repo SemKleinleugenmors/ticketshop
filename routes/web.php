@@ -10,6 +10,9 @@ use App\Http\Controllers\Admin\AdminTicketController;
 
 use App\Http\Controllers\MovieController;
 
+use App\Http\Controllers\AuthController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,6 +26,10 @@ use App\Http\Controllers\MovieController;
 */
 
 Route::get('/', [SiteController::class, 'index']);
+
+/* Auth */
+Route::get('/login', [AuthController::class, 'create']);
+Route::post('/login', [AuthController::class, 'store']);
 
 /* Locations */
 Route::get('/locations', [LocationController::class, 'index']);
