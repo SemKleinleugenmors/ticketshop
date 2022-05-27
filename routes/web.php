@@ -7,9 +7,7 @@ use App\Http\Controllers\TicketController;
 
 use App\Http\Controllers\Admin\AdminMovieController;
 use App\Http\Controllers\Admin\AdminTicketController;
-
 use App\Http\Controllers\MovieController;
-
 use App\Http\Controllers\AuthController;
 
 
@@ -28,25 +26,27 @@ use App\Http\Controllers\AuthController;
 Route::get('/', [SiteController::class, 'index']);
 
 /* Auth */
-Route::get('/login', [AuthController::class, 'create']);
-Route::post('/login', [AuthController::class, 'store']);
-Route::post('/logout', [AuthController::class, 'destroy']);
+Route::get('/login', [AuthController::class, 'create'])->name('login');
+Route::post('/login', [AuthController::class, 'store'])->name('login.store');
+Route::post('/logout', [AuthController::class, 'destroy'])->name('logout');
 
 /* Locations */
-Route::get('/locations', [LocationController::class, 'index']);
-Route::get('/locations/{id}', [LocationController::class, 'show']);
+Route::get('/locations', [LocationController::class, 'index'])->name('locations.index');
+Route::get('/locations/{id}', [LocationController::class, 'show'])->name('locations.show');
 
 /* Ticket */
-Route::get('/tickets/{id}/{movieName}', [TicketController::class, 'create']);
-Route::post('/tickets/store', [TicketController::class, 'store']);
+Route::get('/tickets/{id}/{movieName}', [TicketController::class, 'create'])->name('tickets.create');
+Route::post('/tickets/store', [TicketController::class, 'store'])->name('tickets.create');
 
 /* Movies */
-Route::get('/movies', [MovieController::class, 'index']);
-Route::get('/movies/{id}', [MovieController::class, 'show']);
+Route::get('/movies', [MovieController::class, 'index'])->name('movies.index');
+Route::get('/movies/{id}', [MovieController::class, 'show'])->name('movies.show');
 
 
 /* Admin */
-Route::prefix('/admin')->group(function() {
+Route::middleware('auth')->prefix('/admin')->group(function() {
+
+    Route::get('/', [AdminMovieController::class, 'index'])->name('admin.movies.index');
 
     /* Movies */
     Route::get('/movies', [AdminMovieController::class, 'index'])->name('admin.movies.index');

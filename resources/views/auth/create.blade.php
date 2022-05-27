@@ -3,8 +3,9 @@
 @section('content')
 
 
-  <section class="container mx-auto h-96">
-    <div class="flex content-center justify-center">
+  <section class="flex flex-col h-96 justify-center items-center">
+
+      <div><h3 class="text-black text-2xl">Login</h3></div>
       <form action="/login" method="post" class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4" enctype="multipart/form-data">
         @csrf
         <div class="mb-4">
@@ -23,6 +24,5 @@
 
         <button class="w-full bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="submit">Login</button>
       </form>
-    </div>
   </section>
 @endsection

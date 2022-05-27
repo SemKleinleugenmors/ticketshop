@@ -4,7 +4,7 @@
 
     <section class="container mx-auto py-8">
 
-        <h3 class="text-2xl">{{ $ticket->movie->title }}</h3>
+        <h3 class="text-2xl">{{ $ticket->movie->title }} <br> {{ $ticket->totalQty }}</h3>
         <span class="float-right">
             <div class="block text-2xl">
                 Price: {{ $ticket->price }},-
