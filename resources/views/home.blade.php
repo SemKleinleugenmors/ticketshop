@@ -23,7 +23,7 @@
                             <p>Here are the biggest enterprise technology acquisitions of 2021 so far, in reverse chronological order.</p>
                         </section>
 
-                        <a class="absolute top-0 bottom-0 left-0 right-0" href="/movies/{{ $movie->id }}"></a>
+                        <a class="absolute top-0 bottom-0 left-0 right-0" href="/movies/{{ $movie->id }}/{{  Str::snake($movie->title, "-") }}"></a>
                     </article>
                 @endforeach
             @endif

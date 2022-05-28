@@ -29,7 +29,7 @@
             </section>
             <section class="flex justify-between py-6">
                 <p>Hier komen nog meer opties.. </p>
-                <a href="#" class="shadow text-blue-500 rounded-lg text-lg px-5 py-2.5 mr-2 mb-2 text-white">Order tickets</a>
+                <a href="/tickets/{{ $movie->ticket->id }}/{{ Str::snake( $movie->title ) }}" class="shadow text-blue-500 rounded-lg text-lg px-5 py-2.5 mr-2 mb-2 text-white">Order tickets</a>
             </section>
             <section class="flex py-8">
                 <article class="w-3/5">

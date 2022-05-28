@@ -23,6 +23,7 @@ use App\Http\Controllers\AuthController;
 |
 */
 
+/* Index */
 Route::get('/', [SiteController::class, 'index']);
 
 /* Auth */
@@ -34,14 +35,14 @@ Route::post('/logout', [AuthController::class, 'destroy'])->name('logout');
 Route::get('/locations', [LocationController::class, 'index'])->name('locations.index');
 Route::get('/locations/{id}', [LocationController::class, 'show'])->name('locations.show');
 
-/* Ticket */
+/* Ticket / Mollie API */
 Route::get('/tickets/{id}/{movieName}', [TicketController::class, 'create'])->name('tickets.create');
-Route::post('/tickets/store', [TicketController::class, 'store'])->name('tickets.create');
+Route::post('/tickets/store', [TicketController::class, 'store'])->name('tickets.store');
+Route::get('/tickets/webhook', [TicketController::class, 'webhook'])->name('webhooks.mollie');
 
 /* Movies */
 Route::get('/movies', [MovieController::class, 'index'])->name('movies.index');
-Route::get('/movies/{id}', [MovieController::class, 'show'])->name('movies.show');
-
+Route::get('/movies/{id}/{movieName}', [MovieController::class, 'show'])->name('movies.show');
 
 /* Admin */
 Route::middleware('auth')->prefix('/admin')->group(function() {

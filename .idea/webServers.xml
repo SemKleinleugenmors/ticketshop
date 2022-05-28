@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="6c3edc71-1af1-494e-bb8f-0dc07df5e15c" name="laravel.semkleinleugenmors" url="http://laravel.semkleinleugenmors.nl/">
+        <fileTransfer host="laravel.semkleinleugenmors.nl" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

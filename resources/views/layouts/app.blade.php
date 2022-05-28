@@ -29,11 +29,13 @@
             </nav>
           @endauth
 
+
           @auth
             <form class="mr-2 mb-2" action="/logout" method="post">
               @csrf
               <button type="submit" class="shadow rounded-lg bg-white text-lg px-5 py-2.5">Logout</button>
             </form>
+
           @else
               <a href="/login" class="shadow rounded-lg bg-white text-lg px-5 py-2.5">Login</a>
           @endauth
